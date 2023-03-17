@@ -1,4 +1,4 @@
-# Extracting data from external sources
+# Deep reinforcement learning to achive electron transport on quantum dots
 [![GitHub License](https://img.shields.io/github/license/jupyter-guide/ten-rules-jupyter.svg)](https://github.com/sbl-sdsc/mmtf-spark/blob/master/LICENSE)
 
 This notebook uses two implementations of a deep reinforcement algorithm in a coherent transport problem over a system of coupled quantum dots.
