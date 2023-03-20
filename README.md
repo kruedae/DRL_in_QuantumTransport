@@ -4,6 +4,8 @@
 This notebook uses two implementations of a deep reinforcement algorithm in a coherent transport problem over a system of coupled quantum dots.
 First one is the [Baseline](https://github.com/hill-a/stable-baselines) (see Notebook 2 in the notebooks folder) implementation, from an external library which is the one that performs the better. The second one is a proper implementation using the Keras library.
 
+*The enviroment construction notebook is currently is commented in spanish but it will be changed in the following days*
+
 ### Installation and dependencies
 
 Download the GitHub repository and follow the next step befor go to run the notebooks. 
