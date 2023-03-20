@@ -40,47 +40,8 @@ H2 = Qobj(H2)
 H = [H0, [H1, H1_coeff], [H2, H2_coeff]]
 
 
-#Dinamica del sistema
-N = 1000
-tlist = np.linspace(0,50,N)*np.pi/omegamax
-result = mesolve(H, ro, tlist)
-
-p11 = []
-p22 = []
-p33 = []
-
-final_result = [result.states[i].full() for i in range(N)] 
-for paso in final_result:
-  densidad_matrix = np.reshape(paso,(9,))
-  p11.append(densidad_matrix[0])
-  p22.append(densidad_matrix[4])
-  p33.append(densidad_matrix[8]) 
-
-plt.plot(tlist, H1_coeff(tlist,[]), label= r'$\Omega_{1}$')
-plt.plot(tlist, H2_coeff(tlist,[]), label=r'$\Omega_{2}$')
-plt.title("Pulsos")
-plt.legend()
-plt.show()
-
-
-plt.plot(tlist, np.real(p11), label='rho1')
-plt.plot(tlist, np.real(p22), label='rho2')
-plt.plot(tlist, np.real(p33), label='rho3')
-plt.title("Densidades de probabilidad")
-plt.legend()
-plt.show()
-
-
-# ## Usando odeintw
-
-# In[3]:
-
-
-get_ipython().system('pip install odeintw')
 from odeintw import odeintw
 
-
-# In[4]:
 
 
 omegamax = 0.2
@@ -144,32 +105,6 @@ H2 = np.array([[0,0,0],[0,0,-1],[0,-1,0]])
 H2 = Qobj(H2)
 H = [H0, [H1, H1_coeff], [H2, H2_coeff]]
 
-#Dinamica del sistema 
-N = 1000
-tlist = np.linspace(0,50,N)*np.pi/omegamax
-result = mesolve(H, ro, tlist)
-
-p11 = []
-p22 = []
-p33 = []
-
-final_result = [result.states[i].full() for i in range(N)] 
-for paso in final_result:
-  densidad_matrix = np.reshape(paso,(9,))
-  p11.append(densidad_matrix[0])
-  p22.append(densidad_matrix[4])
-  p33.append(densidad_matrix[8])
-
-
-plt.plot(tlist, np.real(p11), label='rho1')
-plt.plot(tlist, np.real(p22), label='rho2')
-plt.plot(tlist, np.real(p33), label='rho3')
-plt.title("Densidades de probabilidad")
-plt.legend()
-plt.show()
-
-
-# # 5 PUNTOS
 
 # In[ ]:
 
